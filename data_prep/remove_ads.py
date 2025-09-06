@@ -18,7 +18,9 @@ sponsor_prototypes = [
 prototype_embeddings = embedder.encode(sponsor_prototypes, convert_to_tensor=True)
 
 def remove_sponsor_sentences(text: str, threshold: float = 0.5) -> str:
-    """Remove sentences too similar to sponsoring and ads """
+
+    """Remove sentences too similar to ads and sponsoring"""
+
     doc = nlp(text)
     sentences = [sent.text.strip() for sent in doc.sents]
 
@@ -36,17 +38,19 @@ def remove_sponsor_sentences(text: str, threshold: float = 0.5) -> str:
 
 
 def rem_ads_transcripts(intput_file = "data/clean_transcripts.json" , output_file = "data/ad_free_transcripts.json") :
-  with open("data/clean_transcripts.json", "r" , encoding = "utf-8") as f :
-    transcripts = json.load(f) 
+  
+    with open("data/clean_transcripts.json", "r" , encoding = "utf-8") as f :
 
-    processed= []
-    for entry in transcripts:
-      transcript_text = entry.get("transcript" ,"")
-      entry["transcript"] = remove_sponsor_sentences(transcript_text) 
-      processed.append(entry)
+        transcripts = json.load(f) 
 
-    with open("data/ad_free_transcripts.json", "w" , encoding = "utf-8") as f :
-      json.dump(processed, f, indent=2, ensure_ascii=False) 
+        processed= []
+        for entry in transcripts:
+            transcript_text = entry.get("transcript" ,"")
+            entry["transcript"] = remove_sponsor_sentences(transcript_text) 
+            processed.append(entry)
+
+        with open("data/ad_free_transcripts.json", "w" , encoding = "utf-8") as f :
+            json.dump(processed, f, indent=2, ensure_ascii=False) 
 
 
 if __name__ == "__main__":
