@@ -1,5 +1,7 @@
-from google.colab import userdata
+from dotenv import load_dotenv
+import os
 from huggingface_hub import login
 
-hf_token = userdata.get('HF_TOKEN')
+load_dotenv()
+hf_token = os.getenv("HF_TOKEN")
 login(token=hf_token)

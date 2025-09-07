@@ -2,7 +2,7 @@ import torch, gc
 from transformers import AutoModelForCausalLM, Trainer, TrainingArguments, BitsAndBytesConfig, DataCollatorForLanguageModeling
 from peft import LoraConfig, get_peft_model, TaskType
 
-def finetune_lora(tokenized_train, tokenized_test, tokenizer, model_name="google/gemma-2b-it", output_dir="fine_tuned_gemma_final"):
+def finetune_lora(tokenized_train, tokenized_test, tokenizer, model_name="google/gemma-2b-it", output_dir="models/finetuned_gemma"):
     gc.collect()
     torch.cuda.empty_cache()
 
