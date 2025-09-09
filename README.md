@@ -35,7 +35,7 @@ The system operates in three main stages:
 
 **Models**  
 [![Gemini 2.0 Flash](https://img.shields.io/badge/Gemini2.0-9C27B0?style=for-the-badge)](#)  
-[![Gemma-3-270m-it](https://img.shields.io/badge/Gemma3-270M-FF9800?style=for-the-badge)](#)  
+[![Gemma-3-1B-it](https://img.shields.io/badge/Gemma3-270M-FF9800?style=for-the-badge)](#)  
 
 **Platforms**  
 [![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/)  
