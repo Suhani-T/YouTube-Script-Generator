@@ -10,7 +10,7 @@ The YouTube Script Generator is the first step toward developing a complete AI-p
 - Remove sponsorship and advertisement content from transcripts using semantic similarity techniques.  
 - Explore deployment strategies through Hugging Face hosting for inference and API integration.
 
-## Architecture & Workflow (Summary)
+## Architecture & Workflow 
 The system operates in three main stages:  
 1. **Transcript Extraction:** Takes YouTube URLs as input, extracts transcripts, and generates concise summaries using Gemini 2.0 Flash, storing the data in JSON format.  
 2. **Data Preparation:** Normalizes transcripts, removes unwanted characters and filler tags, and eliminates sponsorship/advertisement lines using sentence embeddings and cosine similarity.  
